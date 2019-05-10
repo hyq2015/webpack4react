@@ -4,6 +4,9 @@ const path = require("path"),
     UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
     entry: [
+        "@babel/polyfill",
+        "core-js/modules/es.promise", // 做了按路由加载，所以需要添加这两个依赖在entry里面
+        "core-js/modules/es.array.iterator",
         path.resolve(__dirname,"../src/index.js")
     ],
     output: {
@@ -53,11 +56,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: [".js", ".vue", ".jsx", ".json"],
-        alias: {
-            'vue': 'vue/dist/vue.js',
-            '@':path.resolve(__dirname,'../src')
-        }
+        extensions: [".js", ".jsx", ".json"]
     },
     optimization: {
         minimizer: [new UglifyJsPlugin({
@@ -94,7 +93,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "../src/index.html"),
+            template: path.resolve(__dirname, "../index.html"),
             inject: "body"
         })
     ]

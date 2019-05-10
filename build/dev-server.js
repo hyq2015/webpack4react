@@ -4,16 +4,15 @@ const webpackDevMiddleware = require('webpack-dev-middleware'),
     express = require("express"),
     app = express(),
     dev = require("./dev.conf"),
-    path = require("path"),
     compiler = webpack(dev.devConfig),
-    port = process.env.port || 8000,
-    proxy = require('http-proxy-middleware');
+    port = process.env.port || 8001,
+    proxy = require('http-proxy-middleware'),
+    history = require('connect-history-api-fallback');
 
+app.use(history());
 app.use(webpackDevMiddleware(compiler, {
     publicPath: dev.devConfig.output.publicPath,
-    historyApiFallback: true,
-    contentBase: path.resolve(__dirname, "../dist"),
-    hot: true
+    quiet: true
 }));
 app.use(hotMiddleware(compiler));
 if (dev.proxyConfig) {
