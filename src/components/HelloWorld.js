@@ -1,5 +1,6 @@
 import React from "react";
-import {Link, withRouter} from "react-router-dom";
+import { Link } from "react-router-dom";
+import PageFrame from "./PageFrame";
 import "../styles/HelloWorld.less";
 
 class HelloWorld extends React.Component {
@@ -7,25 +8,27 @@ class HelloWorld extends React.Component {
         super(props);
     }
     componentDidMount () {
-        console.log(this.props.router);
     }
     render () {
         return (
-            <div className="page-hello">
-                <h1>hello world!</h1>
-                <h2>
-                    <a href="https://reactjs.org/">React document</a>
-                </h2>
-                <h2>
-                    <a href="https://github.com/hyq2015">Visit Ricky's github url!</a>
-                </h2>
-                <div
-                    className="home"
-                >
-                    <Link to="/404">home</Link>
+            <PageFrame {...this.props}>
+                <div className="page-hello">
+                    <h1>hello world!</h1>
+                    <h2>
+                        <a href="https://reactjs.org/">React document</a>
+                    </h2>
+                    <h2>
+                        <a href="https://github.com/hyq2015">Visit Ricky's github url!</a>
+                    </h2>
+                    <div
+                        className="home"
+                    >
+                        <Link to="/home">home</Link>
+                    </div>
                 </div>
-            </div>
+            </PageFrame>
+
         );
     }
 }
-export default withRouter(HelloWorld)
+export default HelloWorld;

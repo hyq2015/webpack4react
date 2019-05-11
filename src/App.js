@@ -1,8 +1,7 @@
 import { hot } from 'react-hot-loader/root';
 import React from "react";
 import Loadable from 'react-loadable';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./styles/App.scss";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 const HelloWorld = Loadable({
     loader: () => import('./components/HelloWorld'),
     loading: () => <div>Loading...</div>,
@@ -12,16 +11,14 @@ const Page404 = Loadable({
     loading: () => <div>Loading...</div>,
 });
 class App extends  React.Component {
-    componentDidMount () {
-    }
-
     render () {
         return (
             <Router>
-                <div className="page-main">
-                    <Route path="/" exact component={HelloWorld}/>
-                    <Route path="/404" exact component={Page404}/>
-                </div>
+                <Switch>
+                    <Route path="/" exact render={ (props) => <HelloWorld {...props} auth={true}/>} />
+                    <Route path="/404" component={Page404}/>
+                    <Redirect to="/404" />
+                </Switch>
             </Router>
         );
     }
