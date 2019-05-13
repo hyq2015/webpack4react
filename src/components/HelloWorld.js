@@ -18,7 +18,7 @@ class HelloWorld extends React.Component {
                         <a href="https://reactjs.org/">React document</a>
                     </h2>
                     <h2>
-                        <a href="https://github.com/hyq2015">Visit Ricky's github url!</a>
+                        <a href="https://github.com/hyq2015">Visit Ricky&apos;s github url!</a>
                     </h2>
                     <div
                         className="home"

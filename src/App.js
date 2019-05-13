@@ -1,15 +1,15 @@
-import { hot } from 'react-hot-loader/root';
+import { hot } from "react-hot-loader/root";
 import React from "react";
-import Loadable from 'react-loadable';
+import Loadable from "react-loadable";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 const HelloWorld = Loadable({
-    loader: () => import('./components/HelloWorld'),
-    loading: () => <div>Loading...</div>,
-});
-const Page404 = Loadable({
-    loader: () => import('./components/404'),
-    loading: () => <div>Loading...</div>,
-});
+        loader: () => import("./components/HelloWorld"),
+        loading: () => <div>Loading...</div>
+    }),
+    Page404 = Loadable({
+        loader: () => import("./components/404"),
+        loading: () => <div>Loading...</div>
+    });
 class App extends  React.Component {
     render () {
         return (

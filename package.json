@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ./build/dev-server.js "
+    "build-dev": "node ./build/dev-server.js",
+    "dev": "run-s eslint stylelint build-dev",
+    "eslint": "eslint --ext .js src",
+    "stylelint": "stylelint ./src/**/*.scss ./src/**/*.less"
   },
   "repository": {
     "type": "git",
@@ -31,7 +34,7 @@
     "clean-webpack-plugin": "2.0.1",
     "connect-history-api-fallback": "1.6.0",
     "css-loader": "2.1.1",
-    "eslint-plugin-react": "7.13.0",
+    "eslint-plugin-react": "^7.13.0",
     "eventsource-polyfill": "0.9.6",
     "express": "4.16.4",
     "fe-code-lint": "0.0.21",
@@ -41,6 +44,9 @@
     "less": "3.9.0",
     "less-loader": "4.1.0",
     "node-sass": "4.11.0",
+    "npm-run-all": "4.1.5",
+    "open": "^6.3.0",
+    "portfinder": "^1.0.20",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
     "uglifyjs-webpack-plugin": "2.1.2",
@@ -55,11 +61,13 @@
     "@babel/polyfill": "7.4.4",
     "@babel/runtime-corejs3": "7.4.4",
     "core-js": "3.0.1",
+    "prop-types": "^15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-hot-loader": "4.8.4",
     "react-loadable": "5.5.0",
     "react-router": "5.0.0",
-    "react-router-dom": "5.0.0"
+    "react-router-dom": "5.0.0",
+    "webpack-log": "^2.0.0"
   }
 }
