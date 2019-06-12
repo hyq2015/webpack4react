@@ -7,7 +7,7 @@ ReactDOM.render(
     document.getElementById("app")
 );
 if (module.hot) {
-    module.hot.accept("./App.js", function () {
+    module.hot.accept("./App.js", function() {
 
     });
 }

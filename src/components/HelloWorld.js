@@ -1,15 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import PageFrame from "./PageFrame";
 import "../styles/HelloWorld.less";
 
 class HelloWorld extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
     }
-    componentDidMount () {
+
+    componentDidMount() {
     }
-    render () {
+    render() {
         return (
             <PageFrame {...this.props}>
                 <div className="page-hello">
@@ -31,4 +32,5 @@ class HelloWorld extends React.Component {
         );
     }
 }
+
 export default HelloWorld;
