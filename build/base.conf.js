@@ -58,38 +58,6 @@ module.exports = {
     resolve: {
         extensions: [".js", ".jsx", ".json"]
     },
-    optimization: {
-        minimizer: [new UglifyJsPlugin({
-            test: /\.js(\?.*)?$/i,
-            exclude: /\/node_modules/
-        })],
-        runtimeChunk: {
-            name: "manifest"
-        },
-        splitChunks: {
-            chunks: 'all',
-            minSize: 30000,
-            maxSize: 0,
-            minChunks: 1,
-            maxAsyncRequests: 5,
-            maxInitialRequests: 3,
-            automaticNameDelimiter: '~',
-            name: true,
-            cacheGroups: {
-                vendors: {
-                    test: /[\\/]node_modules[\\/]/,
-                    priority: -10
-                },
-                common: {
-                    name: "common",
-                    test:/[\\/]src[\\/]js[\\/]/,
-                    minChunks: 2,
-                    priority: -20,
-                    reuseExistingChunk: true
-                }
-            }
-        }
-    },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({

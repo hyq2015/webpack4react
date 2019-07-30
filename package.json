@@ -1,6 +1,6 @@
 {
   "name": "webpack4react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "build-dev": "node ./build/dev-server.js",
     "dev": "run-s eslint stylelint build-dev",
     "eslint": "eslint --ext .js src",
-    "stylelint": "stylelint ./src/**/*.scss ./src/**/*.less"
+    "stylelint": "stylelint ./src/**/*.scss ./src/**/*.less",
+    "prod": "node ./build/build.js"
   },
   "repository": {
     "type": "git",
@@ -46,6 +47,7 @@
     "node-sass": "4.11.0",
     "npm-run-all": "4.1.5",
     "open": "^6.3.0",
+    "ora": "^3.4.0",
     "portfinder": "^1.0.20",
     "redux-devtools": "^3.5.0",
     "sass-loader": "7.1.0",
