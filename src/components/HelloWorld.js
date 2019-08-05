@@ -1,14 +1,27 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import PageFrame from "./PageFrame";
+import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
+import * as testAction1 from "../actions/HelloWorldActions";
 import "../styles/HelloWorld.less";
 
+function mapStateToProps(state) {
+    return state.hello;
+}
+function mapDispatchToProps(dispatch) {
+    return{
+        helloActions: bindActionCreators(testAction1, dispatch)
+    }
+}
 class HelloWorld extends React.Component {
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
+        // this.props.helloActions.testAction1("hi");
+        this.props.dispatch(testAction1.testAction1("ricky"));
     }
     render() {
         return (
@@ -33,4 +46,4 @@ class HelloWorld extends React.Component {
     }
 }
 
-export default HelloWorld;
+export default connect(mapStateToProps)(HelloWorld);
