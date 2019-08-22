@@ -1,5 +1,4 @@
-export function testAction1(para) {
-    console.log(para);
+export function changeName(para) {
     return (dispatch, state) => {
         // console.log(state().hello);
         dispatch({
