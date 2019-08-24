@@ -1,7 +1,6 @@
 const path = require("path"),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
-    UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: [
         "@babel/polyfill",

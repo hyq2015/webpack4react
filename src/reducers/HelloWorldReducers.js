@@ -1,5 +1,5 @@
 const initialState = {
-    name: "gail",
+    name: "Mary",
     sex: "femail"
 };
 export default function helloWorldReducer(state = initialState, action) {
