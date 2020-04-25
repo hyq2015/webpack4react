@@ -5,4 +5,4 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(mainReducer,composeEnhancers(applyMiddleware (
     thunkMiddleware  // 允许我们 dispatch() 函数
 )));
-export default store;
+export {store};
