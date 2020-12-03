@@ -11,7 +11,7 @@ class HelloWorld extends React.Component<{auth: boolean; name: string}, {}> {
 
         // connect(mapStateToProps)
         // this.props.dispatch(testAction1.testAction1('ricky'));
-        console.log(this.props);
+        // console.log(this.props);
     }
     handleClick() {
     }
