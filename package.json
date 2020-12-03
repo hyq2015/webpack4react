@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "node ./build/dev-server.js",
-    "dev": "run-s eslint stylelint build-dev",
-    "eslint": "eslint --ext .js src",
+    "dev": "run-s tslint stylelint build-dev",
+    "tslint": "tslint './src/**/*.ts ./src/**/*.tsx' --fix",
     "stylelint": "stylelint ./src/**/*.scss ./src/**/*.less",
     "prod": "node ./build/build.js"
   },

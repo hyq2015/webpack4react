@@ -50,27 +50,10 @@ module.exports = {
                 use: ["file-loader"]
             },
             {
-                test: /\.vue$/,
-                exclude:/node_modules/,
-                use: ["vue-loader"]
-            },
-            {
                 test: /\.jsx?$/,
                 exclude:/node_modules/,
                 use: ["babel-loader"]
             },
-            // {
-            //     test: /\.tsx?$/,
-            //     use: [
-            //         {
-            //             loader: 'tslint-loader',
-            //             options: {
-            //                 configFile: path.resolve(__dirname, '../tslint.json'),
-            //             },
-            //         },
-            //     ],
-            //     exclude: /node_modules/,
-            // },
             {
                 test: /\.tsx?$/,
                 use: [
@@ -110,9 +93,6 @@ module.exports = {
         }),
         new CopyPlugin([
             { from: path.resolve(__dirname, '../static'), to: path.resolve(__dirname,"../dist") },
-        ]),
-        // new webpack.ProvidePlugin({
-        //     CodeMirror:"CodeMirror"
-        // })
+        ])
     ]
 };

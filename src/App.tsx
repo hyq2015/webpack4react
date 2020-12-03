@@ -2,12 +2,11 @@ import * as React from 'react';
 import * as Loadable from 'react-loadable';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-// @ts-ignore
 const HelloWorld = Loadable({
         loader: () => import('./components/HelloWorld'),
         loading: () => <div>Loading...</div>
-    }),
-    Page404 = Loadable({
+    });
+const Page404 = Loadable({
         loader: () => import('./components/404'),
         loading: () => <div>Loading...</div>
     });
